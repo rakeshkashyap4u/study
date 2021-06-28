@@ -3,6 +3,9 @@ package com.rakesh.cont.program;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
@@ -17,8 +20,11 @@ public class TestSorting {
 		arlist.add(90);
 		arlist.add(23);
 		arlist.add(16);
-		arlist.add(101);
+		arlist.add(104);
 		arlist.add(11);
+		arlist.add(58);
+		arlist.add(92);
+		arlist.add(13);
 		
 		System.out.println(arlist);
 		
@@ -27,6 +33,11 @@ public class TestSorting {
 		Collections.sort(arlist, c);
 		
 		System.out.println(arlist);
+		
+		List<Integer> l2 =  arlist.stream().filter(i->i%2==0).collect(Collectors.toList()); //filter Prime no
+		
+		
+		System.out.println(l2);
 		
 		
 		
